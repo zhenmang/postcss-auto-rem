@@ -1,4 +1,4 @@
-**smart-rem and postcss-auto-rem can set rem automatically, it's suitable for Vue Frameworks, React Frameworks, Angular Frameworks, Nuxt Frameworks, Next Frameworks**
+**smart-rem and postcss-auto-rem can set rem automatically, it's suitable for Vue Frameworks, React Frameworks, Angular Frameworks, Nuxt Frameworks, Next Frameworks, Node Api, gulp and so on.**
 
 # What can this package do？
 
@@ -30,8 +30,6 @@
 
 # Usage
 
-### 1.Vue Frameworks
-
 **Step one:** 
 
 ```
@@ -59,19 +57,17 @@ smartRem(750)
 
 **Step three:**
 
-***\*1:\**** Install plugin: converts pixel units to `rem` without configuration. 
+***1.*** Install plugin: converts pixel units to `rem` without configuration. 
 
 
 
-\```sh
-
+```sh
 npm install --save-dev postcss postcss-auto-rem
-
-\```
-
+```
 
 
-***\*2:\**** Check you project for existed PostCSS config: `postcss.config.js`
+
+***2.*** Check you project for existed PostCSS config: `postcss.config.js`
 
 in the project root, `"postcss"` section in `package.json`
 
@@ -79,29 +75,29 @@ or `postcss` in bundle config.
 
 
 
-If you do not use PostCSS, add it according to [official docs]
+If you do not use PostCSS, add it according to [official docs](https://github.com/postcss/postcss#usage)
 
 and set this plugin in settings.
 
 
 
-***\*3:\**** Add the plugin to plugins list:
+***3.*** Add the plugin to plugins list:
 
-
-
-\```diff
-
+```diff
 module.exports = {
 
   plugins: [
 
-\+   require('postcss-auto-rem')
++   require('postcss-auto-rem'),
+
+    require('autoprefixer')
 
   ]
 
 }
+```
 
-\```
+
 
 ### 2.React Frameworks
 
@@ -132,19 +128,17 @@ smartRem(750)
 
 **Step three:**
 
-***\*1:\**** Install plugin: converts pixel units to `rem` without configuration. 
+***1.*** Install plugin: converts pixel units to `rem` without configuration. 
 
 
 
-\```sh
-
+```sh
 npm install --save-dev postcss postcss-auto-rem
-
-\```
-
+```
 
 
-***\*2:\**** Check you project for existed PostCSS config: `postcss.config.js`
+
+***2.*** Check you project for existed PostCSS config: `postcss.config.js`
 
 in the project root, `"postcss"` section in `package.json`
 
@@ -152,29 +146,29 @@ or `postcss` in bundle config.
 
 
 
-If you do not use PostCSS, add it according to [official docs]
+If you do not use PostCSS, add it according to [official docs](https://github.com/postcss/postcss#usage)
 
 and set this plugin in settings.
 
 
 
-***\*3:\**** Add the plugin to plugins list:
+***3.*** Add the plugin to plugins list:
 
-
-
-\```diff
-
+```diff
 module.exports = {
 
   plugins: [
 
-\+   require('postcss-auto-rem')
++   require('postcss-auto-rem'),
+
+    require('autoprefixer')
 
   ]
 
 }
+```
 
-\```
+
 
 ### 3.Angular Frameworks
 
@@ -205,19 +199,17 @@ smartRem(750)
 
 **Step three:**
 
-***\*1:\**** Install plugin: converts pixel units to `rem` without configuration. 
+***1.*** Install plugin: converts pixel units to `rem` without configuration. 
 
 
 
-\```sh
-
+```sh
 npm install --save-dev postcss postcss-auto-rem
-
-\```
-
+```
 
 
-***\*2:\**** Check you project for existed PostCSS config: `postcss.config.js`
+
+***2.*** Check you project for existed PostCSS config: `postcss.config.js`
 
 in the project root, `"postcss"` section in `package.json`
 
@@ -225,29 +217,29 @@ or `postcss` in bundle config.
 
 
 
-If you do not use PostCSS, add it according to [official docs]
+If you do not use PostCSS, add it according to [official docs](https://github.com/postcss/postcss#usage)
 
 and set this plugin in settings.
 
 
 
-***\*3:\**** Add the plugin to plugins list:
+***3.*** Add the plugin to plugins list:
 
-
-
-\```diff
-
+```diff
 module.exports = {
 
   plugins: [
 
-\+   require('postcss-auto-rem')
++   require('postcss-auto-rem'),
+
+    require('autoprefixer')
 
   ]
 
 }
+```
 
-\```
+
 
 ### 4.Nuxt Frameworks
 
@@ -295,19 +287,17 @@ head: {
 
 **Step three:**
 
-***\*1:\**** Install plugin: converts pixel units to `rem` without configuration. 
+***1.*** Install plugin: converts pixel units to `rem` without configuration. 
 
 
 
-\```sh
-
+```sh
 npm install --save-dev postcss postcss-auto-rem
-
-\```
-
+```
 
 
-***\*2:\**** Check you project for existed PostCSS config: `postcss.config.js`
+
+***2.*** Check you project for existed PostCSS config: `postcss.config.js`
 
 in the project root, `"postcss"` section in `package.json`
 
@@ -315,73 +305,29 @@ or `postcss` in bundle config.
 
 
 
-If you do not use PostCSS, add it according to [official docs]
+If you do not use PostCSS, add it according to [official docs](https://github.com/postcss/postcss#usage)
 
 and set this plugin in settings.
 
 
 
-***\*3:\**** Add the plugin to plugins list:
+***3.*** Add the plugin to plugins list:
 
-
-
-\```diff
-
+```diff
 module.exports = {
 
   plugins: [
 
-\+   require('postcss-auto-rem')
++   require('postcss-auto-rem'),
+
+    require('autoprefixer')
 
   ]
 
 }
-
-\```**Step three:**
-
-***\*1:\**** Install plugin: converts pixel units to `rem` without configuration. 
+```
 
 
-
-\```sh
-
-npm install --save-dev postcss postcss-auto-rem
-
-\```
-
-
-
-***\*2:\**** Check you project for existed PostCSS config: `postcss.config.js`
-
-in the project root, `"postcss"` section in `package.json`
-
-or `postcss` in bundle config.
-
-
-
-If you do not use PostCSS, add it according to [official docs]
-
-and set this plugin in settings.
-
-
-
-***\*3:\**** Add the plugin to plugins list:
-
-
-
-\```diff
-
-module.exports = {
-
-  plugins: [
-
-\+   require('postcss-auto-rem')
-
-  ]
-
-}
-
-\```
 
 ### 5.Next Frameworks
 
@@ -439,19 +385,17 @@ export default class MyDocument extends Document {
 
 **Step three:**
 
-***\*1:\**** Install plugin: converts pixel units to `rem` without configuration. 
+***1.*** Install plugin: converts pixel units to `rem` without configuration. 
 
 
 
-\```sh
-
+```sh
 npm install --save-dev postcss postcss-auto-rem
-
-\```
-
+```
 
 
-***\*2:\**** Check you project for existed PostCSS config: `postcss.config.js`
+
+***2.*** Check you project for existed PostCSS config: `postcss.config.js`
 
 in the project root, `"postcss"` section in `package.json`
 
@@ -459,26 +403,67 @@ or `postcss` in bundle config.
 
 
 
-If you do not use PostCSS, add it according to [official docs]
+If you do not use PostCSS, add it according to [official docs](https://github.com/postcss/postcss#usage)
 
 and set this plugin in settings.
 
 
 
-***\*3:\**** Add the plugin to plugins list:
+***3.*** Add the plugin to plugins list:
 
-
-
-\```diff
-
+```diff
 module.exports = {
 
   plugins: [
 
-\+   require('postcss-auto-rem')
++   require('postcss-auto-rem'),
+
+    require('autoprefixer')
 
   ]
 
 }
-
 ```
+
+
+
+### 5.Node Api
+
+```js
+var fs = require('fs');
+var postcss = require('postcss');
+var postcssAutoRem = require('postcss-auto-rem');
+var css = fs.readFileSync('main.css', 'utf8');
+var processedCss = postcss(postcssAutoRem()).process(css).css;
+ 
+fs.writeFile('auto-rem.css', processedCss, function (err) {
+  if (err) {
+    throw err;
+  }
+  console.log('file written.');
+});
+```
+
+### 6.gulp
+
+```js
+var gulp = require('gulp');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+var postcssAutoRem = require('postcss-auto-rem');
+ 
+gulp.task('css', function () {
+ 
+    var processors = [
+        autoprefixer({
+            browsers: 'last 1 version'
+        }),
+        postcssAutoRem()
+    ];
+ 
+    return gulp.src(['build/css/**/*.css'])
+        .pipe(postcss(processors))
+        .pipe(gulp.dest('build/css'));
+});
+```
+
