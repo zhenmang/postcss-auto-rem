@@ -1,6 +1,6 @@
 {
   "name": "postcss-auto-rem",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "PostCSS plugin that set rem automatically",
   "keywords": [
     "postcss",
@@ -8,11 +8,13 @@
     "postcss-plugin",
     "auto-rem",
     "rem",
-    "postcss-auto-rem"
+    "postcss-auto-rem",
+    "smart-rem"
   ],
   "scripts": {
     "test": "jest"
   },
+  "main": "index.js",
   "author": "luoyupu <815355586@qq.com>",
   "license": "MIT",
   "repository": "lyp/postcss-auto-rem",
