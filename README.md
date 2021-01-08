@@ -1,3 +1,5 @@
+# Particular attention！ The best solution is to use it with smart-rem  
+
 **smart-rem and postcss-auto-rem can set rem automatically, it's suitable for Vue Frameworks, React Frameworks, Angular Frameworks, Nuxt Frameworks, Next Frameworks, Node Api, gulp and so on.**
 
 # What can this package do？
@@ -28,7 +30,10 @@
 }
 ```
 
-# Usage
+# Usage  
+
+### 1.Vue Frameworks    
+
 
 **Step one:** 
 
