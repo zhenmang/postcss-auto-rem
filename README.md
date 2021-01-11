@@ -1,6 +1,6 @@
-# Particular attention！ The best solution is to use it with smart-rem  
-
-**smart-rem and postcss-auto-rem can set rem automatically, it's suitable for Vue Frameworks, React Frameworks, Angular Frameworks, Nuxt Frameworks, Next Frameworks, Node Api, gulp and so on.**
+**smart-rem and postcss-auto-rem can set rem automatically, it's suitable for Vue Frameworks, React Frameworks, Angular Frameworks, Nuxt Frameworks, Next Frameworks, Node Api, gulp and so on.**  
+  
+***<u>Remember that if you have any questions during use, please contact shuaiqiyupu@163.com. I'd be happy to help you.</u>***  
 
 # What can this package do？
 
@@ -28,7 +28,16 @@
     width: 0.5rem;
     font-size: 0.5rem;
 }
-```
+```  
+  
+### Particular attention！ The best solution is to use it with smart-rem.  
+  
+#### smart-rem set Html-Fontsize automatically; postcss-auto-rem converts px to rem that do not need any configurations and compile fastly than other packages;  
+  
+#### e.g.  Compile the code above, compare with pxtorem.  
+
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7c6f0e9b1bf24aecbad9f6bcc2fa25f1~tplv-k3u1fbpfcp-watermark.image)  
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f8e2a73adf094834879842a1af7d5018~tplv-k3u1fbpfcp-watermark.image)  
 
 # Usage  
 
