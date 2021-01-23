@@ -1,3 +1,9 @@
+/*!
+ * smart-rem.js
+ * (c) 2020 lyp
+ * Released under the MIT License.
+ */
+/* eslint-disable */
 const postcss = require('postcss');
 module.exports = postcss.plugin('postcss-auto-rem', (opts) => {
   let size, errMsg;
