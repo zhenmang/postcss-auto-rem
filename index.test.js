@@ -33,5 +33,5 @@ const customOut = `.foo {
   font-size: 1rem;
 }`;
 it('test-transfer', async () => {
-  await run(customInput, customOut, {})
+  await run(customInput, customOut, {size:'10px'})
 })

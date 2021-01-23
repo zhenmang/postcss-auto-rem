@@ -1,6 +1,4 @@
-**smart-rem and postcss-auto-rem can set rem automatically, it's suitable for Vue Frameworks, React Frameworks, Angular Frameworks, Nuxt Frameworks, Next Frameworks, Node Api, gulp and so on.**  
-  
-***<u>Remember that if you have any questions during use, please contact shuaiqiyupu@163.com. I'd be happy to help you.</u>***  
+***<u>Remember that if you have any questions during use, please contact email shuaiqiyupu@163.com. I'd be happy to help you.</u>***  
 
 # What can this package do？
 
@@ -8,7 +6,7 @@
 
 ### Your css code
 
-```
+```css
 .foo {
     /* Input example */
     margin: 100px;
@@ -18,9 +16,11 @@
 }
 ```
 
-### What it looks like in the browser
 
-```
+
+### After using postcss-auto-rem，What it looks like in the browser
+
+```css
 .foo {
     /* Output example */
     margin: 1rem;
@@ -28,81 +28,45 @@
     width: 0.5rem;
     font-size: 0.5rem;
 }
-```  
-  
-### Particular attention！ The best solution is to use it with smart-rem.  
-  
-#### smart-rem set Html-Fontsize automatically; postcss-auto-rem converts px to rem that do not need any configurations and compile fastly than other packages;  
-  
-#### e.g.  Compile the code above, compare with pxtorem.  
+```
 
-![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7c6f0e9b1bf24aecbad9f6bcc2fa25f1~tplv-k3u1fbpfcp-watermark.image)  
-![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f8e2a73adf094834879842a1af7d5018~tplv-k3u1fbpfcp-watermark.image)  
 
-# Usage  
 
-### 1.Vue Frameworks    
+### It is more efficient than other plug-ins, as shown in the picture below.
 
+
+
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7c6f0e9b1bf24aecbad9f6bcc2fa25f1~tplv-k3u1fbpfcp-watermark.image)
+
+
+
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f8e2a73adf094834879842a1af7d5018~tplv-k3u1fbpfcp-watermark.image)
+
+### In this case, it's twice as fast
+
+# Support all popular frameworks、webpack、 gulp and nodejs api.
+
+# Usage
 
 **Step one:** 
 
-```
-npm install smart-rem -S
-```
-
-
-
-**Step two:**
-
-In file src/main.js
-
-```
-import smartRem from 'smart-rem'
-smartRem(Arguments)
-```
-
-**Notes**:  Arguments is the width of design draft. If  design draft's width is 750px, the argument of smartRem is 750 without 'px' as follows:
-
-```
-smartRem(750)
-```
-
-
-
-**Step three:**
-
-***1.*** Install plugin: converts pixel units to `rem` without configuration. 
-
-
-
 ```sh
-npm install --save-dev postcss postcss-auto-rem
+npm install postcss-auto-rem -D
 ```
 
 
 
-***2.*** Check you project for existed PostCSS config: `postcss.config.js`
+**Step two**:
 
-in the project root, `"postcss"` section in `package.json`
+Add the plugin to plugins list:
 
-or `postcss` in bundle config.
-
-
-
-If you do not use PostCSS, add it according to [official docs](https://github.com/postcss/postcss#usage)
-
-and set this plugin in settings.
-
-
-
-***3.*** Add the plugin to plugins list:
-
-```diff
+```js
 module.exports = {
 
   plugins: [
-
-+   require('postcss-auto-rem'),
+    
+    // The default value of size is 100
++   require('postcss-auto-rem')({size: 100}),
 
     require('autoprefixer')
 
@@ -111,344 +75,104 @@ module.exports = {
 }
 ```
 
+**Note:**
 
+**If the parameter size  is 100, the conversion result is as follows**
 
-### 2.React Frameworks
-
-**Step one:** 
-
-```
-npm install smart-rem -S
+```js
+100px => 100 / 100 => 1rem
 ```
 
+**If the parameter size  is 16, the conversion result is as follows**
 
-
-**Step two:**
-
-In file src/index.js
-
-```
-import smartRem from 'smart-rem'
-smartRem(Arguments)
+```js
+100px => 100 / 50 => 2rem
 ```
 
-**Notes**:  Arguments is the width of design draft. If  design draft's width is 750px, the argument of smartRem is 750 without 'px' as follows:
+Then, you'll see 2rem in your browser.
 
-```
-smartRem(750)
-```
+**The default value of size is 100**
 
 
 
-**Step three:**
+# e.g.
 
-***1.*** Install plugin: converts pixel units to `rem` without configuration. 
+
+
+### 1.Vue Framework
 
 
 
 ```sh
-npm install --save-dev postcss postcss-auto-rem
+npm install postcss-auto-rem -D
 ```
 
 
 
-***2.*** Check you project for existed PostCSS config: `postcss.config.js`
+In file  **.postcssrc.js** or **postcss.config.js**. If it doesn't exist, create one under the root directory of the project.
 
-in the project root, `"postcss"` section in `package.json`
-
-or `postcss` in bundle config.
-
-
-
-If you do not use PostCSS, add it according to [official docs](https://github.com/postcss/postcss#usage)
-
-and set this plugin in settings.
-
-
-
-***3.*** Add the plugin to plugins list:
-
-```diff
+```js
 module.exports = {
-
-  plugins: [
-
-+   require('postcss-auto-rem'),
-
-    require('autoprefixer')
-
-  ]
-
-}
-```
-
-
-
-### 3.Angular Frameworks
-
-**Step one:** 
-
-```
-npm install smart-rem -S
-```
-
-
-
-**Step two:**
-
-In file src/main.ts
-
-```
-import smartRem from 'smart-rem'
-smartRem(Arguments)
-```
-
-**Notes**:  Arguments is the width of design draft. If  design draft's width is 750px, the argument of smartRem is 750 without 'px' as follows:
-
-```
-smartRem(750)
-```
-
-
-
-**Step three:**
-
-***1.*** Install plugin: converts pixel units to `rem` without configuration. 
-
-
-
-```sh
-npm install --save-dev postcss postcss-auto-rem
-```
-
-
-
-***2.*** Check you project for existed PostCSS config: `postcss.config.js`
-
-in the project root, `"postcss"` section in `package.json`
-
-or `postcss` in bundle config.
-
-
-
-If you do not use PostCSS, add it according to [official docs](https://github.com/postcss/postcss#usage)
-
-and set this plugin in settings.
-
-
-
-***3.*** Add the plugin to plugins list:
-
-```diff
-module.exports = {
-
-  plugins: [
-
-+   require('postcss-auto-rem'),
-
-    require('autoprefixer')
-
-  ]
-
-}
-```
-
-
-
-### 4.Nuxt Frameworks
-
-**Step one:** 
-
-```
-npm install smart-rem -S
-```
-
-
-
-**Step two:**
-
-In file nuxt.config.js, add script to head as follows:
-
-```
-head: {
-    title: pkg.name,
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    // ** Begin Adding
-    script: [
-      {
-        innerHTML: require('smart-rem') + 'smartRem(Arguments)',
-        type: 'text/javascript',
-        charset: 'utf-8'
-      }
-    ],
-    __dangerouslyDisableSanitizers: ['script']
-    // ** End Adding
-  },
-```
-
-**Notes**:  Arguments is the width of design draft. If  design draft's width is 750px, the argument of smartRem is 750 without 'px' as follows:
-
-```
-'smartRem(750)'
-```
-
-
-
-**Step three:**
-
-***1.*** Install plugin: converts pixel units to `rem` without configuration. 
-
-
-
-```sh
-npm install --save-dev postcss postcss-auto-rem
-```
-
-
-
-***2.*** Check you project for existed PostCSS config: `postcss.config.js`
-
-in the project root, `"postcss"` section in `package.json`
-
-or `postcss` in bundle config.
-
-
-
-If you do not use PostCSS, add it according to [official docs](https://github.com/postcss/postcss#usage)
-
-and set this plugin in settings.
-
-
-
-***3.*** Add the plugin to plugins list:
-
-```diff
-module.exports = {
-
-  plugins: [
-
-+   require('postcss-auto-rem'),
-
-    require('autoprefixer')
-
-  ]
-
-}
-```
-
-
-
-### 5.Next Frameworks
-
-**Step one:** 
-
-```
-npm install smart-rem -S
-```
-
-
-
-**Step two:**
-
-Create a file named `pages/_document.js` and add the following content:
-
-```
-// _document is only rendered on the server side and not on the client side
-// Event handlers like onClick can't be added to this file
-
-// ./pages/_document.js
-import Document, { Head, Main, NextScript } from 'next/document'
-
-export default class MyDocument extends Document {
-  static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
-  }
-
-  render() {
-    return (
-      <html>
-        <Head>
-          <style>{`body { margin: 0 } /* custom! */`}</style>
-          // ** Begin Adding
-          <script dangerouslySetInnerHTML={{__html: require('smart-rem') + 'smartRem(Arguments)'}}></script>
-          // ** End Adding
-        </Head>
-        <body className="custom_class">
-          <Main />
-          <NextScript />
-        </body>
-      </html>
-    )
+  "plugins": {
+    "postcss-import": {},
+    "postcss-url": {},
+    "autoprefixer": {},
++   "postcss-auto-rem": {size: 100},
   }
 }
-```
-
-**Notes**:  Arguments is the width of design draft. If  design draft's width is 750px, the argument of smartRem is 750 without 'px' as follows:
 
 ```
-'smartRem(750)'
-```
 
 
 
-**Step three:**
-
-***1.*** Install plugin: converts pixel units to `rem` without configuration. 
+### 2.React Framework
 
 
 
 ```sh
-npm install --save-dev postcss postcss-auto-rem
+npm install postcss-auto-rem -D
 ```
 
 
 
-***2.*** Check you project for existed PostCSS config: `postcss.config.js`
+In file  **config/webpack.config.js**. If it doesn't exist, create one with `npm run eject`.
 
-in the project root, `"postcss"` section in `package.json`
-
-or `postcss` in bundle config.
-
-
-
-If you do not use PostCSS, add it according to [official docs](https://github.com/postcss/postcss#usage)
-
-and set this plugin in settings.
-
-
-
-***3.*** Add the plugin to plugins list:
-
-```diff
-module.exports = {
-
-  plugins: [
-
-+   require('postcss-auto-rem'),
-
-    require('autoprefixer')
-
-  ]
-
-}
+```js
+{
+    loader: require.resolve('css-loader'),
+    options: cssOptions,
+},
+{
+    loader: require.resolve('postcss-loader'),
+    options: {
+        ident: 'postcss',
+          plugins: () => [
+            require('postcss-flexbugs-fixes'),
++           require('postcss-auto-rem')({size: 100}),
+            require('postcss-preset-env')({
+              autoprefixer: {
+                flexbox: 'no-2009',
+              },
+              stage: 3,
+            }),
+            postcssNormalize(),
+          ],
+          sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
+    },
+},
 ```
 
 
 
-### 5.Node Api
+### 3.Node Api
 
 ```js
 var fs = require('fs');
 var postcss = require('postcss');
 var postcssAutoRem = require('postcss-auto-rem');
 var css = fs.readFileSync('main.css', 'utf8');
-var processedCss = postcss(postcssAutoRem()).process(css).css;
++ var options = {size: 100};
++ var processedCss = postcss(postcssAutoRem(options)).process(css).css;
  
 fs.writeFile('auto-rem.css', processedCss, function (err) {
   if (err) {
@@ -458,7 +182,7 @@ fs.writeFile('auto-rem.css', processedCss, function (err) {
 });
 ```
 
-### 6.gulp
+### 4.gulp
 
 ```js
 var gulp = require('gulp');
@@ -472,7 +196,7 @@ gulp.task('css', function () {
         autoprefixer({
             browsers: 'last 1 version'
         }),
-        postcssAutoRem()
++       postcssAutoRem({size: 100})
     ];
  
     return gulp.src(['build/css/**/*.css'])
@@ -480,4 +204,37 @@ gulp.task('css', function () {
         .pipe(gulp.dest('build/css'));
 });
 ```
+
+
+
+### Other instructions:
+
+####  if you don't set the pixel value of the root element, you can choose smart-smart to set it.
+
+
+
+```sh
+npm install smart-rem -S
+```
+
+
+
+In the entry file（e.g. src/index.js or src/main.js）
+
+```js
+import smartRem from 'smart-rem'
+smartRem(Arguments)
+```
+
+
+
+**Notes**:  Arguments is the width of design draft. If  design draft's width is 750px, the argument of smartRem is 750 without 'px' as follows:
+
+```js
+smartRem(750)
+```
+
+
+
+**smart-rem will set the coefficient of root element to 100. So, parameter size of posts-auto-rem  should be 100.**
 
