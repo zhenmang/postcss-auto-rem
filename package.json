@@ -1,6 +1,6 @@
 {
   "name": "postcss-auto-rem",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "PostCSS plugin that set rem automatically",
   "keywords": [
     "postcss",
