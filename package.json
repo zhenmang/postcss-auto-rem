@@ -1,6 +1,6 @@
 {
   "name": "postcss-auto-rem",
-  "version": "2.0.10",
+  "version": "3.0.0",
   "description": "PostCSS plugin that set rem automatically",
   "keywords": [
     "postcss",
@@ -12,26 +12,17 @@
     "smart-rem"
   ],
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack --config webpack.config.js --mode=production"
   },
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "author": "luoyupu <815355586@qq.com>",
   "license": "MIT",
   "repository": "lyp/postcss-auto-rem",
   "engines": {
     "node": ">=10.0.0"
-  },
-  "peerDependencies": {
-    "postcss": "^8.1.5"
-  },
-  "devDependencies": {
-    "clean-publish": "^1.1.8",
-    "eslint": "^7.14.0",
-    "eslint-plugin-jest": "^24.1.3",
-    "husky": "^4.3.0",
-    "jest": "^26.4.2",
-    "lint-staged": "^10.5.2",
-    "postcss": "^8.1.5"
   },
   "husky": {
     "hooks": {
@@ -63,6 +54,50 @@
       "global": {
         "statements": 100
       }
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "babel-loader": "^9.2.1",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.7.3",
+    "webpack-cli": "^6.0.1",
+    "clean-publish": "^1.1.8",
+    "eslint": "^7.14.0",
+    "eslint-plugin-jest": "^24.1.3",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.5.2",
+    "postcss": "^8.1.5"
+  },
+  "peerDependencies": {
+    "postcss": "^8.1.5",
+    "@babel/core": "*",
+    "@babel/preset-env": "*",
+    "babel-loader": "*",
+    "ts-loader": "*",
+    "typescript": "*",
+    "webpack-cli": "*"
+  },
+  "peerDependenciesMeta": {
+    "ts-loader": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    },
+    "@babel/core": {
+      "optional": true
+    },
+    "@babel/preset-env": {
+      "optional": true
+    },
+    "babel-loader": {
+      "optional": true
+    },
+    "webpack-cli": {
+      "optional": true
     }
   }
 }

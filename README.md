@@ -64,7 +64,7 @@ module.exports = {
   plugins: [
     
     // The default value of size is 100
-+   require('postcss-auto-rem')({size: 100}),
++   require('postcss-auto-rem')(),
 
     require('autoprefixer')
 
@@ -112,10 +112,7 @@ In file  **.postcssrc.js** or **postcss.config.js**. If it doesn't exist, create
 ```diff
 module.exports = {
   "plugins": {
-    "postcss-import": {},
-    "postcss-url": {},
-    "autoprefixer": {},
-+   "postcss-auto-rem": {size: 100},
++   "postcss-auto-rem": {},
   }
 }
 ```
@@ -147,7 +144,7 @@ In file  **config/webpack.config.js**. If it doesn't exist, create one with `npm
         ident: 'postcss',
           plugins: () => [
             require('postcss-flexbugs-fixes'),
-+           require('postcss-auto-rem')({size: 100}),
++           require('postcss-auto-rem')(),
             require('postcss-preset-env')({
               autoprefixer: {
                 flexbox: 'no-2009',
@@ -170,8 +167,7 @@ var fs = require('fs');
 var postcss = require('postcss');
 var postcssAutoRem = require('postcss-auto-rem');
 var css = fs.readFileSync('main.css', 'utf8');
-+ var options = {size: 100};
-+ var processedCss = postcss(postcssAutoRem(options)).process(css).css;
++ var processedCss = postcss(postcssAutoRem()).process(css).css;
  
 fs.writeFile('auto-rem.css', processedCss, function (err) {
   if (err) {
@@ -197,7 +193,7 @@ gulp.task('css', function () {
         autoprefixer({
             browsers: 'last 1 version'
         }),
-+       postcssAutoRem({size: 100})
++       postcssAutoRem()
     ];
  
     return gulp.src(['build/css/**/*.css'])
@@ -266,7 +262,7 @@ module.exports = {
 
   plugins: [
 
-+   require('postcss-auto-rem')({size: 100}),
++   require('postcss-auto-rem')(),
 
     require('autoprefixer')
 

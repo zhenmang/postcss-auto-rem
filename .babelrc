@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    //编译器的选项
+    // target 用来指定ts编译为js的版本
+    "target": "es6",
+    "module": "es6",
+    "strict": true
+  }
+}
